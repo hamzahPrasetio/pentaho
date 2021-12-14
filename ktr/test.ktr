@@ -6,6 +6,7 @@
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -443,7 +444,7 @@
     <database>ibank</database>
     <port>5432</port>
     <username>postgres</username>
-    <password>Encrypted 2be98afc807c69c90aa09a971d0c3fd89</password>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -512,6 +513,7 @@
     <fields>
       <field>
         <name>kode_cabang</name>
+        <rename/>
       </field>
       <field>
         <name>nomor_rekening</name>
@@ -519,477 +521,635 @@
       </field>
       <field>
         <name>nama_singkat</name>
+        <rename/>
       </field>
       <field>
         <name>sektor_ekonomi</name>
+        <rename/>
       </field>
       <field>
         <name>tgl_realisasi</name>
+        <rename/>
       </field>
       <field>
         <name>tgl_jt</name>
+        <rename/>
       </field>
       <field>
         <name>pby_bank</name>
+        <rename/>
       </field>
       <field>
         <name>total_pby</name>
+        <rename/>
       </field>
       <field>
         <name>nilai_margin</name>
+        <rename/>
       </field>
       <field>
         <name>saldo_pokok</name>
+        <rename/>
       </field>
       <field>
         <name>saldo_margin</name>
+        <rename/>
       </field>
       <field>
         <name>saldo_akhir</name>
+        <rename/>
       </field>
       <field>
         <name>tungg_pokok</name>
+        <rename/>
       </field>
       <field>
         <name>tungg_margin</name>
+        <rename/>
       </field>
       <field>
         <name>kolektibility</name>
+        <rename/>
       </field>
       <field>
         <name>kd_produk</name>
+        <rename/>
       </field>
       <field>
         <name>uraian</name>
+        <rename/>
       </field>
       <field>
         <name>gl_induk</name>
+        <rename/>
       </field>
       <field>
         <name>eir_kontrak</name>
+        <rename/>
       </field>
       <field>
         <name>kd_apl</name>
+        <rename/>
       </field>
       <field>
         <name>jnk_wkt_bl</name>
+        <rename/>
       </field>
       <field>
         <name>nilai_agunan</name>
+        <rename/>
       </field>
       <field>
         <name>ppap_dibentuk</name>
+        <rename/>
       </field>
       <field>
         <name>jns_margin</name>
+        <rename/>
       </field>
       <field>
         <name>gol_pemilik</name>
+        <rename/>
       </field>
       <field>
         <name>jenis_guna</name>
+        <rename/>
       </field>
       <field>
         <name>gol_penjamin</name>
+        <rename/>
       </field>
       <field>
         <name>lokasi</name>
+        <rename/>
       </field>
       <field>
         <name>bagian_dijamin</name>
+        <rename/>
       </field>
       <field>
         <name>hubungan_bank</name>
+        <rename/>
       </field>
       <field>
         <name>sts_piutang</name>
+        <rename/>
       </field>
       <field>
         <name>orientasi_guna</name>
+        <rename/>
       </field>
       <field>
         <name>gol_piutang</name>
+        <rename/>
       </field>
       <field>
         <name>uang_muka</name>
+        <rename/>
       </field>
       <field>
         <name>no_nsb</name>
+        <rename/>
       </field>
       <field>
         <name>pokok_jadwal</name>
+        <rename/>
       </field>
       <field>
         <name>margin_jadwal</name>
+        <rename/>
       </field>
       <field>
         <name>pokok_bayar</name>
+        <rename/>
       </field>
       <field>
         <name>margin_bayar</name>
+        <rename/>
       </field>
       <field>
         <name>kat_nasabah</name>
+        <rename/>
       </field>
       <field>
         <name>kat_produk</name>
+        <rename/>
       </field>
       <field>
         <name>kat_segmen</name>
+        <rename/>
       </field>
       <field>
         <name>kode_bisnis</name>
+        <rename/>
       </field>
       <field>
         <name>kode_instansi</name>
+        <rename/>
       </field>
       <field>
         <name>nama_instansi</name>
+        <rename/>
       </field>
       <field>
         <name>rek_afi_instansi</name>
+        <rename/>
       </field>
       <field>
         <name>rek_afiliasi</name>
+        <rename/>
       </field>
       <field>
         <name>angs_margin</name>
+        <rename/>
       </field>
       <field>
         <name>xbrl_sek_eko</name>
+        <rename/>
       </field>
       <field>
         <name>xbrl_gol_pemilik</name>
+        <rename/>
       </field>
       <field>
         <name>xbrl_jenis_guna</name>
+        <rename/>
       </field>
       <field>
         <name>xbrl_gol_penerbit</name>
+        <rename/>
       </field>
       <field>
         <name>xbrl_lokasi</name>
+        <rename/>
       </field>
       <field>
         <name>xbrl_bagian_dijamin</name>
+        <rename/>
       </field>
       <field>
         <name>xbrl_hubungan_bank</name>
+        <rename/>
       </field>
       <field>
         <name>xbrl_sifat_piutang</name>
+        <rename/>
       </field>
       <field>
         <name>xbrl_orientasi_guna</name>
+        <rename/>
       </field>
       <field>
         <name>xbrl_kategori_usaha</name>
+        <rename/>
       </field>
       <field>
         <name>sid_sek_eko</name>
+        <rename/>
       </field>
       <field>
         <name>sid_gol_pemilik</name>
+        <rename/>
       </field>
       <field>
         <name>sid_jenis_guna</name>
+        <rename/>
       </field>
       <field>
         <name>sid_gol_penjamin</name>
+        <rename/>
       </field>
       <field>
         <name>sid_lokasi</name>
+        <rename/>
       </field>
       <field>
         <name>sid_bagian_dijamin</name>
+        <rename/>
       </field>
       <field>
         <name>sid_hubungan_bank</name>
+        <rename/>
       </field>
       <field>
         <name>sid_sts_piutang</name>
+        <rename/>
       </field>
       <field>
         <name>sid_orientasi_guna</name>
+        <rename/>
       </field>
       <field>
         <name>sid_gol_piutang</name>
+        <rename/>
       </field>
       <field>
         <name>entrustbal</name>
+        <rename/>
       </field>
       <field>
         <name>kolek_rek</name>
+        <rename/>
       </field>
       <field>
         <name>kolek_nsb</name>
+        <rename/>
       </field>
       <field>
         <name>sts_debitur</name>
+        <rename/>
       </field>
       <field>
         <name>jenis_piutang</name>
+        <rename/>
       </field>
       <field>
         <name>kategori_portofolio</name>
+        <rename/>
       </field>
       <field>
         <name>jenis_agunan</name>
+        <rename/>
       </field>
       <field>
         <name>sifat_agunan</name>
+        <rename/>
       </field>
       <field>
         <name>xbrlsegmen</name>
+        <rename/>
       </field>
       <field>
         <name>kd_ao</name>
+        <rename/>
       </field>
       <field>
         <name>omsetxbrl</name>
+        <rename/>
       </field>
       <field>
         <name>tung_denda</name>
+        <rename/>
       </field>
       <field>
         <name>penalty</name>
+        <rename/>
       </field>
       <field>
         <name>saldo_pokok_psak</name>
+        <rename/>
       </field>
       <field>
         <name>saldo_margin_psak</name>
+        <rename/>
       </field>
       <field>
         <name>attribusi</name>
+        <rename/>
       </field>
       <field>
         <name>saldo_akhir_psak</name>
+        <rename/>
       </field>
       <field>
         <name>tungg_pokok_psak</name>
+        <rename/>
       </field>
       <field>
         <name>tungg_margin_psak</name>
+        <rename/>
       </field>
       <field>
         <name>margin_undermarket</name>
+        <rename/>
       </field>
       <field>
         <name>sisa_margin_undermarket</name>
+        <rename/>
       </field>
       <field>
         <name>irr</name>
+        <rename/>
       </field>
       <field>
         <name>irrattrib</name>
+        <rename/>
       </field>
       <field>
         <name>eqrate_psak</name>
+        <rename/>
       </field>
       <field>
         <name>nama_ao</name>
+        <rename/>
       </field>
       <field>
         <name>ckpn</name>
+        <rename/>
       </field>
       <field>
         <name>stsimpr</name>
+        <rename/>
       </field>
       <field>
         <name>tarif_ckpn</name>
+        <rename/>
       </field>
       <field>
         <name>segmen</name>
+        <rename/>
       </field>
       <field>
         <name>eqratecurr</name>
+        <rename/>
       </field>
       <field>
         <name>id_fasilitas</name>
+        <rename/>
       </field>
       <field>
         <name>plafond_facility</name>
+        <rename/>
       </field>
       <field>
         <name>segmentasi_eksternal</name>
+        <rename/>
       </field>
       <field>
         <name>kd_ao_mntc</name>
+        <rename/>
       </field>
       <field>
         <name>nama_ao_mntx</name>
+        <rename/>
       </field>
       <field>
         <name>tgl_peralihan</name>
+        <rename/>
       </field>
       <field>
         <name>ratio_rbh</name>
+        <rename/>
       </field>
       <field>
         <name>tgl_kolektibility</name>
+        <rename/>
       </field>
       <field>
         <name>eqrate_kontrak</name>
+        <rename/>
       </field>
       <field>
         <name>acumaccru</name>
+        <rename/>
       </field>
       <field>
         <name>acumaccru_np</name>
+        <rename/>
       </field>
       <field>
         <name>eqrate_lsmk</name>
+        <rename/>
       </field>
       <field>
         <name>jml_adendum</name>
+        <rename/>
       </field>
       <field>
         <name>angs_pokok</name>
+        <rename/>
       </field>
       <field>
         <name>margin_perbulan</name>
+        <rename/>
       </field>
       <field>
         <name>dpd_pokok</name>
+        <rename/>
       </field>
       <field>
         <name>dpd_margin</name>
+        <rename/>
       </field>
       <field>
         <name>angs_bulan_depan</name>
+        <rename/>
       </field>
       <field>
         <name>margin_bulan_depan</name>
+        <rename/>
       </field>
       <field>
         <name>facility_no</name>
+        <rename/>
       </field>
       <field>
         <name>ket_gol_nasabah</name>
+        <rename/>
       </field>
       <field>
         <name>lembaga_pemeringkat</name>
+        <rename/>
       </field>
       <field>
         <name>nilai_pemeringkat</name>
+        <rename/>
       </field>
       <field>
         <name>tanggal_pemeringkat</name>
+        <rename/>
       </field>
       <field>
         <name>kode_valuta</name>
+        <rename/>
       </field>
       <field>
         <name>akad</name>
+        <rename/>
       </field>
       <field>
         <name>sifat_investasi</name>
+        <rename/>
       </field>
       <field>
         <name>metode_bg_hasil</name>
+        <rename/>
       </field>
       <field>
         <name>persen_nisbah</name>
+        <rename/>
       </field>
       <field>
         <name>nilai_kontrak</name>
+        <rename/>
       </field>
       <field>
         <name>jml_bln_lalu</name>
+        <rename/>
       </field>
       <field>
         <name>unused_committed</name>
+        <rename/>
       </field>
       <field>
         <name>unused_uncommitted</name>
+        <rename/>
       </field>
       <field>
         <name>tgl_tunggak</name>
+        <rename/>
       </field>
       <field>
         <name>status_nasabah</name>
+        <rename/>
       </field>
       <field>
         <name>tgl_bayar_terakhir</name>
+        <rename/>
       </field>
       <field>
         <name>tgl_angsuran</name>
+        <rename/>
       </field>
       <field>
         <name>nilai_proyek</name>
+        <rename/>
       </field>
       <field>
         <name>sebab_macet</name>
+        <rename/>
       </field>
       <field>
         <name>tgl_macet</name>
+        <rename/>
       </field>
       <field>
         <name>kondisi</name>
+        <rename/>
       </field>
       <field>
         <name>tgl_kondisi</name>
+        <rename/>
       </field>
       <field>
         <name>frek_tunggak</name>
+        <rename/>
       </field>
       <field>
         <name>tgl_restruktur_terakhir</name>
+        <rename/>
       </field>
       <field>
         <name>tgl_restruktur_awal</name>
+        <rename/>
       </field>
       <field>
         <name>cara_restruktur</name>
+        <rename/>
       </field>
       <field>
         <name>no_akad_awal</name>
+        <rename/>
       </field>
       <field>
         <name>tgl_akad_awal</name>
+        <rename/>
       </field>
       <field>
         <name>no_akad_akhir</name>
+        <rename/>
       </field>
       <field>
         <name>tgl_akad_akhir</name>
+        <rename/>
       </field>
       <field>
         <name>jenis_aset</name>
+        <rename/>
       </field>
       <field>
         <name>wkt_peroleh_aset</name>
+        <rename/>
       </field>
       <field>
         <name>jenis_valuta_aset</name>
+        <rename/>
       </field>
       <field>
         <name>harga_perolehan_aset</name>
+        <rename/>
       </field>
       <field>
         <name>jml_periode_depresiasi</name>
+        <rename/>
       </field>
       <field>
         <name>metode_penyusutan</name>
+        <rename/>
       </field>
       <field>
         <name>periode_byr_sewa</name>
+        <rename/>
       </field>
       <field>
         <name>nilai_sewa_perperode</name>
+        <rename/>
       </field>
       <field>
         <name>akum_depresiasi</name>
+        <rename/>
       </field>
       <field>
         <name>cad_penurunan_ijarah</name>
+        <rename/>
       </field>
       <field>
         <name>uang_muka_ijarah</name>
+        <rename/>
       </field>
       <field>
         <name>periode</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1029,12 +1189,12 @@
     <encoding>windows-1252</encoding>
     <endedLine/>
     <fileNameInField>N</fileNameInField>
-    <fileNameField/>
+    <fileNameField>filename</fileNameField>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>file_output</name>
+      <name>${filename}</name>
       <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
       <extention>txt</extention>
       <append>N</append>
       <split>N</split>
@@ -1046,7 +1206,7 @@
       <add_to_result_filenames>Y</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>N</fast_dump>
-      <splitevery/>
+      <splitevery>0</splitevery>
     </file>
     <fields>
       <field>
@@ -2996,11 +3156,11 @@
       <schema_name/>
     </partitioning>
     <connection>Postgre_local</connection>
-    <sql>SELECT * FROM ibdwh.fin_nominatif_daily</sql>
+    <sql>SELECT * FROM ibdwh.fin_nominatif_daily LIMIT ${Limit}</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
+    <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>

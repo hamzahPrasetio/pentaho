@@ -3,10 +3,13 @@ package com.example.pentaho;
 import org.pentaho.di.core.KettleEnvironment;
 import org.pentaho.di.core.exception.KettleException;
 import org.pentaho.di.core.logging.LoggingBuffer;
+import org.pentaho.di.core.parameters.UnknownParamException;
 import org.pentaho.di.trans.Trans;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.pentaho.di.core.logging.KettleLogStore;
+
+import java.util.HashMap;
 
 @SpringBootApplication
 public class PentahoApplication {
@@ -24,8 +27,13 @@ public class PentahoApplication {
 		// Create an instance of this demo class for convenience
 		instance = new RunningTransformations();
 
+		// set variable n parameter
+		HashMap<String, String> parameters = new HashMap<String, String>();
+		parameters.put("Limit","7");
+		parameters.put("filename","tesfilename");
+
 		// run a transformation from the file system
-		Trans trans = instance.runTransformationFromFileSystem( "ktr/test.ktr" );
+		Trans trans = instance.runTransformationFromFileSystem( "ktr/test.ktr", parameters );
 
 		// retrieve logging appender
 		LoggingBuffer appender = KettleLogStore.getAppender();

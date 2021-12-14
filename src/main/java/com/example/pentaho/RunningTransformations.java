@@ -19,6 +19,9 @@ import org.pentaho.di.repository.RepositoryMeta;
 import org.pentaho.di.trans.Trans;
 import org.pentaho.di.trans.TransMeta;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * This class demonstrates how to load and execute a PDI transformation.
  * It covers loading from both file system and repositories,
@@ -28,48 +31,6 @@ import org.pentaho.di.trans.TransMeta;
 public class RunningTransformations {
 
     public static RunningTransformations instance;
-
-    /**
-     * @param args not used
-     */
-    public static void main( String[] args ) {
-
-        // Kettle Environment must always be initialized first when using PDI
-        // It bootstraps the PDI engine by loading settings, appropriate plugins etc.
-        try {
-            KettleEnvironment.init();
-        } catch ( KettleException e ) {
-            e.printStackTrace();
-            return;
-        }
-
-        // Create an instance of this demo class for convenience
-        instance = new RunningTransformations();
-
-        // run a transformation from the file system
-        Trans trans = instance.runTransformationFromFileSystem( "D:/Job/Export/tesrest.ktr" );
-
-        // retrieve logging appender
-        LoggingBuffer appender = KettleLogStore.getAppender();
-        // retrieve logging lines for job
-        String logText = appender.getBuffer( trans.getLogChannelId(), false ).toString();
-
-        // report on logged lines
-        System.out.println( "************************************************************************************************" );
-        System.out.println( "LOG REPORT: Transformation generated the following log lines:\n" );
-        System.out.println( logText );
-        System.out.println( "END OF LOG REPORT" );
-        System.out.println( "************************************************************************************************" );
-
-
-        // run a transformation from the repository
-        // NOTE: before running the repository example, you need to make sure that the
-        // repository and transformation exist, and can be accessed by the user and password used
-        // uncomment and run after you've got a test repository in place
-
-        // instance.runTransformationFromRepository("test-repository", "/home/joe", "parametrized_transformation", "joe", "password");
-
-    }
 
     /**
      * This method executes a transformation defined in a ktr file
@@ -85,7 +46,7 @@ public class RunningTransformations {
      * @param filename the file containing the transformation to execute (ktr file)
      * @return the transformation that was executed, or null if there was an error
      */
-    public Trans runTransformationFromFileSystem( String filename ) {
+    public Trans runTransformationFromFileSystem( String filename, HashMap<String, String> extraParams ) {
 
         try {
             System.out.println( "***************************************************************************************" );
@@ -98,6 +59,7 @@ public class RunningTransformations {
             // The next section reports on the declared parameters and sets them to arbitrary values
             // for demonstration purposes
             System.out.println( "Attempting to read and set named parameters" );
+
             String[] declaredParameters = transMeta.listParameters();
             for ( int i = 0; i < declaredParameters.length; i++ ) {
                 String parameterName = declaredParameters[i];
@@ -114,6 +76,12 @@ public class RunningTransformations {
 
                 // assign the value to the parameter on the transformation
                 transMeta.setParameterValue( parameterName, parameterValue );
+            }
+
+            // add parameters
+            for (Map.Entry<String, String> params: extraParams.entrySet()) {
+                transMeta.addParameterDefinition(params.getKey(), params.getValue(), null);
+//                    System.out.println(params.getKey() + " " + params.getValue());
             }
 
             // Creating a transformation object which is the programmatic representation of a transformation
