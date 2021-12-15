@@ -8,38 +8,40 @@
 <body>
     <div>
         <div id="topSection" class="row justify-content-md-center">
-            <h1 class="col" style="text-align: center;margin:30px; width: 100%;">Covid-19 India Statistics</h1>
+            <h1 class="col" style="text-align: center;margin:30px; width: 100%;">KTR Transformation</h1>
         </div>
         <div class="row justify-content-center">
-            <div class="col-6 col-md-2 status-item text-danger">
-                <h2>Confirmed</h2>
-                <h3 style="margin-bottom: 0px;" th:text="${nationalStatus.getConfirmed()}"></h3>
-                <h4>
-                    <span class="text-danger" style="font-size: 1rem; font-weight: bold;" th:text="'[↑] ' + ${nationalStatus.getDeltaConfirmed()}"></span>
-                </h4>
-            </div>
-            <div class="col-6 col-md-2 status-item text-primary">
-                <h2>Active</h2>
-                <h3 style="margin-bottom: 0px;" th:text="${nationalStatus.getActive()}"></h3>
-            </div>
-            <div class="col-6 col-md-2 status-item text-secondary">
-                <h2>Deceased</h2>
-                <h3 style="margin-bottom: 0px;" th:text="${nationalStatus.getDeaths()}"></h3>
-                <h4>
-                    <span class="text-secondary" style="font-size: 1rem; font-weight: bold;" th:text="'[↑] ' + ${nationalStatus.getDeltaDeaths()}"></span>
-                </h4>
-            </div>
-            <div class="col-6 col-md-2 status-item text-success">
-                <h2>Recovered</h2>
-                <h3 style="margin-bottom: 0px;" th:text="${nationalStatus.getRecovered()}"></h3>
-                <h4>
-                    <span class="text-success" style="font-size: 1rem; font-weight: bold;" th:text="'[↑] ' + ${nationalStatus.getDeltaRecovered()}"></span>
-                </h4>
-            </div>
-            <div class="col-6 col-md-2 status-item text-info">
-                <h2>Tested</h2>
-                <h3 style="margin-bottom: 0px;" th:text="${tested}"></h3>
-            </div>
+<!--            <div class="col-6 col-md-2 status-item text-danger">-->
+<!--                <h2>Confirmed</h2>-->
+<!--                <h3 style="margin-bottom: 0px;" th:text="${nationalStatus.getConfirmed()}"></h3>-->
+<!--                <h4>-->
+<!--                    <span class="text-danger" style="font-size: 1rem; font-weight: bold;" th:text="'[↑] ' + ${nationalStatus.getDeltaConfirmed()}"></span>-->
+<!--                </h4>-->
+<!--            </div>-->
+<!--            <div class="col-6 col-md-2 status-item text-primary">-->
+<!--                <h2>Active</h2>-->
+<!--                <h3 style="margin-bottom: 0px;" th:text="${nationalStatus.getActive()}"></h3>-->
+<!--            </div>-->
+<!--            <div class="col-6 col-md-2 status-item text-secondary">-->
+<!--                <h2>Deceased</h2>-->
+<!--                <h3 style="margin-bottom: 0px;" th:text="${nationalStatus.getDeaths()}"></h3>-->
+<!--                <h4>-->
+<!--                    <span class="text-secondary" style="font-size: 1rem; font-weight: bold;" th:text="'[↑] ' + ${nationalStatus.getDeltaDeaths()}"></span>-->
+<!--                </h4>-->
+<!--            </div>-->
+<!--            <div class="col-6 col-md-2 status-item text-success">-->
+<!--                <h2>Recovered</h2>-->
+<!--                <h3 style="margin-bottom: 0px;" th:text="${nationalStatus.getRecovered()}"></h3>-->
+<!--                <h4>-->
+<!--                    <span class="text-success" style="font-size: 1rem; font-weight: bold;" th:text="'[↑] ' + ${nationalStatus.getDeltaRecovered()}"></span>-->
+<!--                </h4>-->
+<!--            </div>-->
+<!--            <div class="col-6 col-md-2 status-item text-info">-->
+<!--                <h2>Tested</h2>-->
+<!--                <h3 style="margin-bottom: 0px;" th:text="${tested}"></h3>-->
+<!--            </div>-->
+            <button class="button"
+                    onclick="window.location.href = '/runTransformation';">Run Transformation</button>
         </div>
     </div>
 

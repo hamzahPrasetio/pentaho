@@ -18,6 +18,9 @@ import org.pentaho.di.repository.RepositoryDirectoryInterface;
 import org.pentaho.di.repository.RepositoryMeta;
 import org.pentaho.di.trans.Trans;
 import org.pentaho.di.trans.TransMeta;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * This class demonstrates how to load and execute a PDI transformation.
@@ -32,44 +35,44 @@ public class RunningTransformations {
     /**
      * @param args not used
      */
-    public static void main( String[] args ) {
-
-        // Kettle Environment must always be initialized first when using PDI
-        // It bootstraps the PDI engine by loading settings, appropriate plugins etc.
-        try {
-            KettleEnvironment.init();
-        } catch ( KettleException e ) {
-            e.printStackTrace();
-            return;
-        }
-
-        // Create an instance of this demo class for convenience
-        instance = new RunningTransformations();
-
-        // run a transformation from the file system
-        Trans trans = instance.runTransformationFromFileSystem( "D:/Job/Export/tesrest.ktr" );
-
-        // retrieve logging appender
-        LoggingBuffer appender = KettleLogStore.getAppender();
-        // retrieve logging lines for job
-        String logText = appender.getBuffer( trans.getLogChannelId(), false ).toString();
-
-        // report on logged lines
-        System.out.println( "************************************************************************************************" );
-        System.out.println( "LOG REPORT: Transformation generated the following log lines:\n" );
-        System.out.println( logText );
-        System.out.println( "END OF LOG REPORT" );
-        System.out.println( "************************************************************************************************" );
-
-
-        // run a transformation from the repository
-        // NOTE: before running the repository example, you need to make sure that the
-        // repository and transformation exist, and can be accessed by the user and password used
-        // uncomment and run after you've got a test repository in place
-
-        // instance.runTransformationFromRepository("test-repository", "/home/joe", "parametrized_transformation", "joe", "password");
-
-    }
+//    public static void main( String[] args ) {
+//
+//        // Kettle Environment must always be initialized first when using PDI
+//        // It bootstraps the PDI engine by loading settings, appropriate plugins etc.
+//        try {
+//            KettleEnvironment.init();
+//        } catch ( KettleException e ) {
+//            e.printStackTrace();
+//            return;
+//        }
+//
+//        // Create an instance of this demo class for convenience
+//        instance = new RunningTransformations();
+//
+//        // run a transformation from the file system
+//        Trans trans = instance.runTransformationFromFileSystem( "D:/Job/Export/tesrest.ktr" );
+//
+//        // retrieve logging appender
+//        LoggingBuffer appender = KettleLogStore.getAppender();
+//        // retrieve logging lines for job
+//        String logText = appender.getBuffer( trans.getLogChannelId(), false ).toString();
+//
+//        // report on logged lines
+//        System.out.println( "************************************************************************************************" );
+//        System.out.println( "LOG REPORT: Transformation generated the following log lines:\n" );
+//        System.out.println( logText );
+//        System.out.println( "END OF LOG REPORT" );
+//        System.out.println( "************************************************************************************************" );
+//
+//
+//        // run a transformation from the repository
+//        // NOTE: before running the repository example, you need to make sure that the
+//        // repository and transformation exist, and can be accessed by the user and password used
+//        // uncomment and run after you've got a test repository in place
+//
+//        // instance.runTransformationFromRepository("test-repository", "/home/joe", "parametrized_transformation", "joe", "password");
+//
+//    }
 
     /**
      * This method executes a transformation defined in a ktr file
@@ -86,6 +89,11 @@ public class RunningTransformations {
      * @return the transformation that was executed, or null if there was an error
      */
     public Trans runTransformationFromFileSystem( String filename ) {
+        try {
+            KettleEnvironment.init();
+        } catch ( KettleException e ) {
+            e.printStackTrace();
+        }
 
         try {
             System.out.println( "***************************************************************************************" );
