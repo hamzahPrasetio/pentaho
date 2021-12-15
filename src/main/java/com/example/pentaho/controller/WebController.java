@@ -21,7 +21,7 @@ public class WebController {
     dataservices dataservices;
 
     @GetMapping("/runTransformation")
-    public String runTransformation() {
+    public String runTransformation(Model model) {
         RunningTransformations runningTransformations = new RunningTransformations();
 
         // run a transformation from the file system
