@@ -10,8 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.pentaho.di.core.logging.KettleLogStore;
 import org.w3c.dom.ls.LSOutput;
 
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.HashMap;
 
 @SpringBootApplication
@@ -20,23 +23,23 @@ public class PentahoApplication {
 	public static RunningTransformations instance;
 
 	public static void main(String[] args) {
-		// set variable n parameter
+
+		Utils utils = new Utils();
 		HashMap<String, String> parameters = new HashMap<String, String>();
+
+		// testing" fungsi
+		// list folder for month 12 year 2021
+		utils.listFilesInFolder(new File(System.getProperty("user.dir") + "/testing"), Month.of(12), 2021);
+
+		// set variable n parameter
+		String filename = "tesfilename";
 		parameters.put("Limit", "7");
-		parameters.put("filename", "testing/tesfilename");
-//		parameters.forEach((key, value) -> {
-//			System.out.println(key + " - " + value);
-//		});
+		parameters.put("filename", utils.constructCompletePath(filename));
+
 
 		SpringApplication.run(PentahoApplication.class, args);
 
-		if (Files.exists(Paths.get("testing"))) {
-			System.out.println("testing folder exist");
-		} else {
-			System.out.println("parantly testing doesnt exit");
-		}
-
-		if (Files.exists(Paths.get(parameters.get("filename") + ".txt"))) {
+		if (Files.exists(Paths.get(parameters.get("filename")))) {
 			System.out.println("file output already exists");
 			return;
 		}
@@ -48,32 +51,15 @@ public class PentahoApplication {
 			e.printStackTrace();
 		}
 
-		// Create an instance of this demo class for convenience
 		instance = new RunningTransformations();
-
-		// run a transformation from the file system
 		Trans trans = instance.runTransformationFromFileSystem( "ktr/test.ktr", parameters );
 
-		// retrieve logging appender
 		LoggingBuffer appender = KettleLogStore.getAppender();
-		// retrieve logging lines for job
 		String logText = appender.getBuffer( trans.getLogChannelId(), false ).toString();
-
-		// report on logged lines
 		System.out.println( "************************************************************************************************" );
 		System.out.println( "LOG REPORT: Transformation generated the following log lines:\n" );
 		System.out.println( logText );
 		System.out.println( "END OF LOG REPORT" );
 		System.out.println( "************************************************************************************************" );
-
-		// run a transformation from the repository
-		// NOTE: before running the repository example, you need to make sure that the
-		// repository and transformation exist, and can be accessed by the user and password used
-		// uncomment and run after you've got a test repository in place
-
-		// instance.runTransformationFromRepository("test-repository", "/home/joe", "parameterized_transformation", "joe", "password");
-
-//		new RunningTransformations().runTransformationFromFileSystem("E:\\APLIKASI\\data-integration\\test.ktr");
 	}
-
 }
