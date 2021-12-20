@@ -1,0 +1,211 @@
+body {
+    background-color: #FFFFFF;
+    font-family: 'Nunito';
+    color: #000000;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*-------------------------------*/
+/*           Wrappers            */
+/*-------------------------------*/
+
+#wrapper {
+    display: flex;
+}
+
+#sidebar-wrapper {
+    position: absolute;
+    width: 198px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: #810912;
+    border-radius: 0px 25px 25px 0px;
+}
+
+#page-content-wrapper {
+    position: absolute;
+    width: 87%;
+    left: 198px;
+}
+
+/*-------------------------------*/
+/*      Sidebar nav styles       */
+/*-------------------------------*/
+
+.navbar {
+  padding: 0;
+}
+
+.sidebar-brand {
+    position: absolute;
+    width: 50px;
+    height: 51.02px;
+    top: 50px;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 240px;
+    width: 198px;
+}
+
+.sidebar-nav li {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.sidebar-nav li:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 0px 18px 18px 0px;
+    margin-right: 23px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 10px 15px 10px 30px;
+}
+
+.sidebar-nav li img {
+
+}
+
+/*-------------------------------*/
+/*      Page content styles      */
+/*-------------------------------*/
+
+.page-content-header {
+    height: 70px;
+}
+
+.first-row-content .card, .first-row-content .card-header {
+    background-color: #FAFAFA;
+}
+
+.card, .card-header {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 20px !important;
+    color: #003049;
+}
+
+.card-header {
+    font-weight: bold;
+    padding-bottom: 0px;
+}
+
+.card-divider {
+    border: 2px solid #ECECEC;
+    width: 94%;
+}
+
+.btn {
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 13px;
+    height: 42px;
+}
+
+#generate-btn {
+    background: #235784;
+}
+
+#generate-btn:hover {
+    background: #173C5C;
+    color: #FFFFFF;
+}
+
+#download-btn {
+    background: #D62828;
+}
+
+#download-btn:hover {
+    background: #A71E1E;
+    color: #FFFFFF;
+}
+
+.form-control {
+    background: url('../images/down-arrow-logo.svg') no-repeat right 10px top 14px white;
+    appearance:none;
+}
+
+.form-cek-laporan {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 29.16666667%;
+    border-right: 3.5px solid #ECECEC;
+}
+
+.file-container-header .card-header {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000 !important;
+}
+
+.input-group {
+    border: 1px solid #CECECE;
+    border-radius: 5px;
+    width: 205px;
+    height: 36px;
+}
+
+.input-group img {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    bottom: 0px;
+    width: 14.81px;
+    margin: auto 0px;
+}
+
+.input-control {
+    border: 0px;
+    padding-left: 10px;
+    background: none;
+}
+
+.file-container {
+    background: #FAFAFA;
+    border-radius: 10px;
+    padding: 12px 0px 0px 12px;
+}
+
+.file {
+    background: #F1F1F1;
+    border-radius: 5px;
+    width: 100%;
+    height: 62px;
+    margin: 0px 12px 12px 0px;
+    vertical-align: middle;
+}
+
+.file span {
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 13px;
+    margin: 0px 10px;
+}
+
+.file img {
+    height: 28px;
+    margin-left: 20px;
+}
+

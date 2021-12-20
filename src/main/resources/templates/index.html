@@ -1,56 +1,224 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous">
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Nunito'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+
     <title>Export PostgreSQL</title>
 </head>
 <body>
-    <div class="d-flex" id="wrapper">
-        <!-- Sidebar-->
-        <div class="border-end bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading border-bottom bg-light">
-                <h3>Export</h3>
+    <div id="wrapper">
+        <!-- Sidebar Navigation -->
+        <nav class="navbar fixed-top" id="sidebar-wrapper">
+            <div class="sidebar-brand mx-auto">
+                <img src="../static/images/application-logo.svg" alt="Logo aplikasi" class="mr-2">
             </div>
-            <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-            </div>
-        </div>
-        <!-- Page content wrapper-->
-        <div id="page-content-wrapper">
-            <!-- Top navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                <div class="container-fluid">
-                    <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation">
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-                        </ul>
+            <ul class="nav sidebar-nav">
+                <li class="nav-item py-2">
+                    <a href="/">
+                        <img src="../static/images/dashboard-logo.svg" alt="Logo dashboard" class="mr-2">
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item py-2">
+                    <a href="/">
+                        <img src="../static/images/export-logo.svg" alt="Logo export laporan" class="mr-2">
+                        <span>Export Laporan</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="container-fluid px-5 pt-4" id="page-content-wrapper">
+            <!-- Page Header -->
+            <div class="page-content-header"></div>
+            <div class="row first-row-content">
+
+                <!-- Generate Laporan Card -->
+                <div class="col">
+                    <div class="card">
+                        <h2 class="card-header">Generate Laporan</h2>
+                        <hr class="card-divider mt-2 mb-0 mx-auto">
+                        <div class="card-body">
+                            <!-- Form Generate Laporan -->
+                            <form class="row">
+                                <div class="col-xl-6 col-md-12">
+                                    <div class="form-group">
+                                        <label>Jenis Laporan:</label>
+                                        <select class="form-control">
+                                            <option value="">SLIK (Sistem Layanan Informasi Keuangan)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6">
+                                    <div class="form-group">
+                                        <label>Tahun Laporan:</label>
+                                        <select class="form-control">
+                                            <option value="">2021</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6">
+                                    <div class="form-group">
+                                        <label>Bulan Laporan:</label>
+                                        <select class="form-control">
+                                            <option value="">Januari</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                            <button class="btn btn-block d-sm-inline-block" id="generate-btn">Generate Laporan</button>
+                        </div>
                     </div>
                 </div>
-            </nav>
-            <!-- Page content-->
-            <div class="container-fluid">
-                <h1 class="mb-3">KTR Transformation</h1>
-                <button class="btn btn-primary" onclick="window.location.href = '/runTransformation';">Run Transformation</button>
-                <a class="btn btn-primary" href="/" role="button">Refresh</a>
+
+                <!-- Unduh Laporan Card -->
+                <div class="col">
+                    <div class="card">
+                        <h2 class="card-header">Unduh Laporan</h2>
+                        <hr class="card-divider mt-2 mb-0 mx-auto">
+                        <div class="card-body">
+                            <!-- Form Unduh Laporan -->
+                            <form class="row">
+                                <div class="col-xl-6 col-md-12">
+                                    <div class="form-group">
+                                        <label>Pilih Laporan:</label>
+                                        <select class="form-control">
+                                            <option value="">SLIK F01</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6">
+                                    <div class="form-group">
+                                        <label>Tahun Laporan:</label>
+                                        <select class="form-control">
+                                            <option value="">2021</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6">
+                                    <div class="form-group">
+                                        <label>Bulan Laporan:</label>
+                                        <select class="form-control">
+                                            <option value="">Januari</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                            <button class="btn btn-block d-sm-inline-block" id="download-btn">Unduh Laporan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cek Laporan Bulanan Card -->
+            <div class="card mt-4">
+                <h2 class="card-header pl-0">Cek Laporan Bulanan</h2>
+                <hr class="card-divider mt-2 mb-0 w-100">
+                <div class="row">
+                    <!-- Form Cek Laporan Bulanan -->
+                    <div class="col-md-3half pr-4 mr-4 form-cek-laporan">
+                        <form class="mt-3 d-flex flex-column">
+                            <div class="form-group">
+                                <label>Jenis Laporan:</label>
+                                <select class="form-control">
+                                    <option value="">SLIK (Sistem Layanan Informasi Keuangan)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Tahun Laporan:</label>
+                                <select class="form-control">
+                                    <option value="">2021</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Bulan Laporan:</label>
+                                <select class="form-control">
+                                    <option value="">Januari</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- File Container Card -->
+                    <div class="col pt-3">
+                        <div class="card">
+                            <div class="file-container-header d-flex flex-row justify-content-between mb-3">
+                                <p class="card-header pl-0 py-auto">Klik untuk mengunduh file</p>
+                                <!-- Search Bar -->
+                                <div class="input-group my-auto">
+                                    <input class="input-control" type="search" placeholder="Cari laporan..."/>
+                                    <img src="../static/images/search-logo.svg" alt="Logo pencarian" class="img-fluid h-50">
+                                </div>
+                            </div>
+                            <!-- File Container -->
+                            <div class="row card-body file-container">
+                                <div class="col-md-3 pl-0">
+                                    <div class="file d-flex flex-wrap align-items-center">
+                                        <img src="../static/images/file-logo.svg" alt="Logo file">
+                                        <span>SLIK_F01_202111</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 pl-0">
+                                    <div class="file d-flex flex-wrap align-items-center">
+                                        <img src="../static/images/file-logo.svg" alt="Logo file">
+                                        <span>SLIK_F01_202111</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 pl-0">
+                                    <div class="file d-flex flex-wrap align-items-center">
+                                        <img src="../static/images/file-logo.svg" alt="Logo file">
+                                        <span>SLIK_F01_202111</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 pl-0">
+                                    <div class="file d-flex flex-wrap align-items-center">
+                                        <img src="../static/images/file-logo.svg" alt="Logo file">
+                                        <span>SLIK_F01_202111</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 pl-0">
+                                    <div class="file d-flex flex-wrap align-items-center">
+                                        <img src="../static/images/file-logo.svg" alt="Logo file">
+                                        <span>SLIK_F01_202111</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 pl-0">
+                                    <div class="file d-flex flex-wrap align-items-center">
+                                        <img src="../static/images/file-logo.svg" alt="Logo file">
+                                        <span>SLIK_F01_202111</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 pl-0">
+                                    <div class="file d-flex flex-wrap align-items-center">
+                                        <img src="../static/images/file-logo.svg" alt="Logo file">
+                                        <span>SLIK_F01_202111</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+
+<!--            <div class="page-content-header">-->
+<!--                <h1 class="h3 mb-0">KTR Transformation</h1>-->
+<!--                <button class="btn btn-primary d-sm-inline-block"-->
+<!--                        onclick="window.location.href='/runTransformation';">Run Transformation</button>-->
+<!--            </div>-->
