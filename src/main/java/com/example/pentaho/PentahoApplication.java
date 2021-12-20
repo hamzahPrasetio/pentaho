@@ -33,15 +33,14 @@ public class PentahoApplication {
 
 		// set variable n parameter
 		String filename = "tesfilename";
-		parameters.put("Limit", "7");
+		parameters.put("Limit", "daily LIMIT 3");
 		parameters.put("filename", utils.constructCompletePath(filename));
 
 
 		SpringApplication.run(PentahoApplication.class, args);
 
 		if (Files.exists(Paths.get(parameters.get("filename")))) {
-			System.out.println("file output already exists");
-			return;
+			System.out.println("file output already exists.... replacing files");
 		}
 
 		KettleLogStore.init();

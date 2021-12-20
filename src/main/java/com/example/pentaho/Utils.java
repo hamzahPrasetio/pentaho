@@ -78,6 +78,6 @@ public class Utils {
     // append folder path to filename
     public String constructCompletePath(String filename) {
         LocalDate currdate = LocalDate.now();
-        return "testing/" + String.format("%04d%02d%02d", currdate.getYear(), currdate.getMonthValue(), currdate.getDayOfMonth()) + "/" + filename + ".txt";
+        return "testing/" + String.format("%04d%02d%02d", currdate.getYear(), currdate.getMonthValue(), currdate.getDayOfMonth()) + "/" + filename;
     }
 }
