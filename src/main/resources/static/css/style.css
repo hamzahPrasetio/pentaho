@@ -5,19 +5,17 @@ body {
 }
 
 .container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    padding: 0px 15px;
+    margin: 0 auto;
 }
-
-/*-------------------------------*/
-/*           Wrappers            */
-/*-------------------------------*/
 
 #wrapper {
     display: flex;
 }
+
+/*---------------------------*/
+/*     Navigation Styles     */
+/*---------------------------*/
 
 #sidebar-wrapper {
     position: absolute;
@@ -25,22 +23,9 @@ body {
     height: 100%;
     left: 0px;
     top: 0px;
+    padding: 0;
     background: #810912;
     border-radius: 0px 25px 25px 0px;
-}
-
-#page-content-wrapper {
-    position: absolute;
-    width: 87%;
-    left: 198px;
-}
-
-/*-------------------------------*/
-/*      Sidebar nav styles       */
-/*-------------------------------*/
-
-.navbar {
-  padding: 0;
 }
 
 .sidebar-brand {
@@ -65,7 +50,7 @@ body {
     width: 100%;
 }
 
-.sidebar-nav li:hover {
+.sidebar-nav li:hover, .sidebar-nav li:focus {
     background: rgba(0, 0, 0, 0.1);
     border-radius: 0px 18px 18px 0px;
     margin-right: 23px;
@@ -80,20 +65,18 @@ body {
     padding: 10px 15px 10px 30px;
 }
 
-.sidebar-nav li img {
+/*-------------------------------*/
+/*      Page Content Styles      */
+/*-------------------------------*/
 
+#page-content-wrapper {
+    position: absolute;
+    width: 87%;
+    left: 198px;
 }
-
-/*-------------------------------*/
-/*      Page content styles      */
-/*-------------------------------*/
 
 .page-content-header {
     height: 70px;
-}
-
-.first-row-content .card, .first-row-content .card-header {
-    background-color: #FAFAFA;
 }
 
 .card, .card-header {
@@ -106,6 +89,10 @@ body {
 .card-header {
     font-weight: bold;
     padding-bottom: 0px;
+}
+
+.first-row-content .card, .first-row-content .card-header {
+    background-color: #FAFAFA;
 }
 
 .card-divider {
@@ -122,6 +109,15 @@ body {
     height: 42px;
 }
 
+.form-control {
+    background: url('../images/down-arrow-logo.svg') no-repeat right 10px top 14px white;
+    appearance:none;
+}
+
+/*----------------------------------*/
+/*   Generate Laporan Card Styles   */
+/*----------------------------------*/
+
 #generate-btn {
     background: #235784;
 }
@@ -130,6 +126,10 @@ body {
     background: #173C5C;
     color: #FFFFFF;
 }
+
+/*---------------------------------*/
+/*    Unduh Laporan Card Styles    */
+/*---------------------------------*/
 
 #download-btn {
     background: #D62828;
@@ -140,9 +140,14 @@ body {
     color: #FFFFFF;
 }
 
-.form-control {
-    background: url('../images/down-arrow-logo.svg') no-repeat right 10px top 14px white;
-    appearance:none;
+/*----------------------------------*/
+/*    Cek Laporan Bulanan Styles    */
+/*----------------------------------*/
+
+.file-container-header .card-header {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000 !important;
 }
 
 .form-cek-laporan {
@@ -152,12 +157,6 @@ body {
     padding-left: 15px;
     width: 29.16666667%;
     border-right: 3.5px solid #ECECEC;
-}
-
-.file-container-header .card-header {
-    font-weight: bold;
-    font-size: 18px;
-    color: #000000 !important;
 }
 
 .input-group {
@@ -182,7 +181,7 @@ body {
     background: none;
 }
 
-.file-container {
+#file-container {
     background: #FAFAFA;
     border-radius: 10px;
     padding: 12px 0px 0px 12px;
@@ -209,3 +208,103 @@ body {
     margin-left: 20px;
 }
 
+/*-------------------------------*/
+/*         Media Queries         */
+/*-------------------------------*/
+
+@media (min-width: 600px) {
+    #navbar-wrapper {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .container-fluid {
+        padding: 10px !important;
+    }
+
+    /*---------------------------*/
+    /*     Navigation Styles     */
+    /*---------------------------*/
+
+    #sidebar-wrapper {
+        display: none;
+    }
+
+    #navbar-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        top: 0px;
+        background: #810912;
+    }
+
+    .navbar-brand {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 20px;
+        width: 19.6px;
+        height: 50px;
+    }
+
+    /*-------------------------------*/
+    /*      Page Content Styles      */
+    /*-------------------------------*/
+
+    #page-content-wrapper {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .page-content-header {
+        display: none;
+    }
+
+    .card-header {
+        font-size: 16px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 10px 0px 10px 0px;
+    }
+
+    .btn, label, option{
+        font-size: 12px;
+    }
+
+    .dotted-divider {
+        border:none;
+        border: 1px dashed rgba(0, 0, 0, 0.2);
+    }
+
+    /*----------------------------------*/
+    /*    Cek Laporan Bulanan Styles    */
+    /*----------------------------------*/
+
+    .cek-laporan-card .card-divider {
+        display: none;
+    }
+
+    .form-cek-laporan {
+        border: none;
+        width: 100%;
+        padding-right: 12px !important;
+        margin-right: 0px !important;
+    }
+
+    .file-container-header {
+        display: none !important;
+    }
+
+    .cek-laporan-card {
+        width: 100%;
+        margin: 0 !important;
+        padding: 0px 20px 0px 20px;
+        border: 2px rgba(0, 0, 0, 0.2);
+    }
+}
